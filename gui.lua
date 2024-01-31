@@ -26,13 +26,12 @@ local Code = Instance.new("Frame")
 local UICorner_5 = Instance.new("UICorner")
 local TextLabel_3 = Instance.new("TextLabel")
 local scripts = Instance.new("ScrollingFrame")
-local ImageLabel_2 = Instance.new("ImageLabel")
-local TextButton = Instance.new("TextButton")
+local button = Instance.new("TextButton")
 local UICorner_6 = Instance.new("UICorner")
-local UICorner_7 = Instance.new("UICorner")
+local ImageLabel_2 = Instance.new("ImageLabel")
 local User = Instance.new("TextLabel")
 local Open = Instance.new("TextButton")
-local UICorner_8 = Instance.new("UICorner")
+local UICorner_7 = Instance.new("UICorner")
 
 -- Properties:
 
@@ -42,11 +41,13 @@ Vaunt.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 BG.Name = "BG"
 BG.Parent = Vaunt
+BG.Active = true
 BG.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 BG.BackgroundTransparency = 0.030
 BG.BorderColor3 = Color3.fromRGB(0, 0, 0)
 BG.BorderSizePixel = 0
-BG.Position = UDim2.new(0.187734663, 0, 0.0847457647, 0)
+BG.Draggable = true
+BG.Position = UDim2.new(0.1864831, 12, 0.0823244527, 2)
 BG.Size = UDim2.new(0, 499, 0, 342)
 
 UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(35, 35, 35)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(22, 22, 22))}
@@ -237,32 +238,32 @@ scripts.BorderColor3 = Color3.fromRGB(0, 0, 0)
 scripts.BorderSizePixel = 0
 scripts.Position = UDim2.new(0, 0, 0.12937066, 0)
 scripts.Size = UDim2.new(0, 319, 0, 248)
-scripts.CanvasPosition = Vector2.new(0, 24)
 scripts.ScrollBarImageColor3 = Color3.fromRGB(6, 6, 6)
 
-ImageLabel_2.Parent = scripts
+button.Name = "button"
+button.Parent = scripts
+button.BackgroundColor3 = Color3.fromRGB(13, 13, 13)
+button.BorderColor3 = Color3.fromRGB(0, 0, 0)
+button.BorderSizePixel = 0
+button.Position = UDim2.new(0.0470219441, 0, 0.0278964508, 0)
+button.Size = UDim2.new(0, 262, 0, 49)
+button.Font = Enum.Font.Unknown
+button.Text = "  Button"
+button.TextColor3 = Color3.fromRGB(255, 255, 255)
+button.TextSize = 22.000
+button.TextXAlignment = Enum.TextXAlignment.Left
+
+UICorner_6.Parent = button
+
+ImageLabel_2.Parent = button
 ImageLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel_2.BackgroundTransparency = 1.000
 ImageLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ImageLabel_2.BorderSizePixel = 0
-ImageLabel_2.Position = UDim2.new(0.0438871458, 0, 0.0524193533, 0)
-ImageLabel_2.Size = UDim2.new(0, 100, 0, 100)
-ImageLabel_2.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
-
-TextButton.Parent = ImageLabel_2
-TextButton.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
-TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextButton.BorderSizePixel = 0
-TextButton.Position = UDim2.new(0, 0, 1.05999982, 0)
-TextButton.Size = UDim2.new(0, 100, 0, 51)
-TextButton.Font = Enum.Font.Unknown
-TextButton.Text = "Example Button"
-TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextButton.TextSize = 23.000
-TextButton.TextWrapped = true
-
-UICorner_6.Parent = TextButton
-
-UICorner_7.Parent = ImageLabel_2
+ImageLabel_2.Position = UDim2.new(0.80534327, 0, 0.102039881, 0)
+ImageLabel_2.Size = UDim2.new(0, 42, 0, 38)
+ImageLabel_2.Image = "rbxassetid://13068737971"
+ImageLabel_2.ScaleType = Enum.ScaleType.Fit
 
 User.Name = "User"
 User.Parent = BG
@@ -270,7 +271,7 @@ User.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 User.BackgroundTransparency = 1.000
 User.BorderColor3 = Color3.fromRGB(0, 0, 0)
 User.BorderSizePixel = 0
-User.Position = UDim2.new(0.402805597, 0, 0.023391813, 0)
+User.Position = UDim2.new(0.402805597, 0, 0.0263157897, 0)
 User.Size = UDim2.new(0, 97, 0, 25)
 User.Font = Enum.Font.Unknown
 User.Text = "vaunt.app"
@@ -290,28 +291,28 @@ Open.Text = "GUI"
 Open.TextColor3 = Color3.fromRGB(255, 255, 255)
 Open.TextSize = 21.000
 
-UICorner_8.CornerRadius = UDim.new(0, 7)
-UICorner_8.Parent = Open
+UICorner_7.CornerRadius = UDim.new(0, 7)
+UICorner_7.Parent = Open
 
 -- Scripts:
 
-local function PPUHVJ_fake_script() -- Close.LocalScript 
+local function TDYH_fake_script() -- Close.LocalScript 
 	local script = Instance.new('LocalScript', Close)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Parent.BG.Visible = false
 	end)
 end
-coroutine.wrap(PPUHVJ_fake_script)()
-local function TWRKA_fake_script() -- Icon.LocalScript 
+coroutine.wrap(TDYH_fake_script)()
+local function CDXM_fake_script() -- Icon.LocalScript 
 	local script = Instance.new('LocalScript', Icon)
 
 	local user = script.Parent
 	
 	user.Image =  game.Players:GetUserThumbnailAsync(game.Players.LocalPlayer.UserId,Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
 end
-coroutine.wrap(TWRKA_fake_script)()
-local function ZUFAQD_fake_script() -- TextLabel.LocalScript 
+coroutine.wrap(CDXM_fake_script)()
+local function ZJWOIOB_fake_script() -- TextLabel.LocalScript 
 	local script = Instance.new('LocalScript', TextLabel)
 
 	local user = game.Players.LocalPlayer.Name
@@ -319,8 +320,8 @@ local function ZUFAQD_fake_script() -- TextLabel.LocalScript
 	
 	txt.Text = "Welcome, "..user
 end
-coroutine.wrap(ZUFAQD_fake_script)()
-local function ODTLIVZ_fake_script() -- Tab1.LocalScript 
+coroutine.wrap(ZJWOIOB_fake_script)()
+local function BDUJ_fake_script() -- Tab1.LocalScript 
 	local script = Instance.new('LocalScript', Tab1)
 
 	script.Parent.Parent.Tab1.MouseButton1Click:Connect(function()
@@ -328,8 +329,16 @@ local function ODTLIVZ_fake_script() -- Tab1.LocalScript
 		script.Parent.Parent.Tab2.Code.Visible = false
 	end)
 end
-coroutine.wrap(ODTLIVZ_fake_script)()
-local function SXZXSWH_fake_script() -- Code.LocalScript 
+coroutine.wrap(BDUJ_fake_script)()
+local function TRKV_fake_script() -- button.LocalScript 
+	local script = Instance.new('LocalScript', button)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		loadstring('script here')
+	end)
+end
+coroutine.wrap(TRKV_fake_script)()
+local function RMMO_fake_script() -- Code.LocalScript 
 	local script = Instance.new('LocalScript', Code)
 
 	script.Parent.Parent.Parent.Tab2.MouseButton1Click:Connect(function()
@@ -337,8 +346,8 @@ local function SXZXSWH_fake_script() -- Code.LocalScript
 		script.Parent.Parent.Parent.Tab2.Code.Visible = true
 	end)
 end
-coroutine.wrap(SXZXSWH_fake_script)()
-local function ZNPJQES_fake_script() -- BG.Smooth GUI Dragging 
+coroutine.wrap(RMMO_fake_script)()
+local function ZBBTM_fake_script() -- BG.Smooth GUI Dragging 
 	local script = Instance.new('LocalScript', BG)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -395,12 +404,12 @@ local function ZNPJQES_fake_script() -- BG.Smooth GUI Dragging
 	
 	runService.Heartbeat:Connect(Update)
 end
-coroutine.wrap(ZNPJQES_fake_script)()
-local function OYQMR_fake_script() -- Open.LocalScript 
+coroutine.wrap(ZBBTM_fake_script)()
+local function OGRQ_fake_script() -- Open.LocalScript 
 	local script = Instance.new('LocalScript', Open)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.BG.Visible = true
 	end)
 end
-coroutine.wrap(OYQMR_fake_script)()
+coroutine.wrap(OGRQ_fake_script)()
